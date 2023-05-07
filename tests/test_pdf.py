@@ -1,11 +1,11 @@
 from pypdf import PdfReader
 import os
-from property import  PROJECT_USER_PATH
+from property import  RESOURCES_PATH
 
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь
 
 def test_pdf():
-    pdf_file = os.path.join(PROJECT_USER_PATH, 'docs-pytest-org-en-latest.pdf')
+    pdf_file = os.path.join(RESOURCES_PATH, 'docs-pytest-org-en-latest.pdf')
     reader = PdfReader(pdf_file)
     number_of_pages = len(reader.pages)
     page = reader.pages[0]

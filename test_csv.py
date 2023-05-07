@@ -1,5 +1,8 @@
 import csv
+
+
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь
+
 with open('resources/eggs.csv', 'w') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
     csvwriter.writerow(['Anna', 'Pavel', 'Peter'])
