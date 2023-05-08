@@ -14,4 +14,4 @@ def test_add_zip():
         for file_name in os.listdir(RESOURCES_PATH):
             assert file_name in zip_file.namelist()
 
-    # os.remove(zip_name)
+    os.remove(zip_name)
