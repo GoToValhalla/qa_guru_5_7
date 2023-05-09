@@ -12,7 +12,7 @@ from property import RESOURCES_PATH
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь к tmp
 
 def test_file_downloading_browser():
-    tmp = os.path.join(RESOURCES_PATH, 'pytest-main.zip.crdownload')
+    tmp = os.path.join(RESOURCES_PATH, 'pytest-main.zip')
     options = webdriver.ChromeOptions()
     if not os.path.exists(RESOURCES_PATH):
         os.mkdir(RESOURCES_PATH)
@@ -26,6 +26,9 @@ def test_file_downloading_browser():
     browser.element(".d-none .Button-label").click()
     browser.element('[data-open-app="link"]').click()
 
+    time.sleep(5)
+
     file_size = os.path.getsize(tmp)
-    assert file_size == 62744
+    assert file_size == 1565521
+    # print(file_size)
     os.remove(tmp)
